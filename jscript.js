@@ -24,24 +24,21 @@ function computerChoice (){
 
 }
 
+//help from -->https://stackoverflow.com/questions/70747536/how-to-check-if-a-button-is-clicked-inside-an-if-statement?answertab=createdasc#tab-top
 
-function humanChoice(){
+function humanChoice(choiz){
     let hChoice='';
 
-    let propmt= prompt("please enter r for Rock, p for Paper, or s for Scissors", 'r, s, p...');
 
-    if (propmt== 's'){
+    if (choiz=='p'){
         hChoice= 'Paper'
+        // console.log(hChoice)
     }
-    else if (propmt== 'r'){
+    else if (choiz=='r'){
         hChoice= 'Rock'
     }
-    else if( propmt== 'p'){
-        hChoice= 'Paper'
-    }
-    else{
-        hChoice= prompt("please enter r for Rock, p for Paper, or s for Scissors", 'r, s, p...');
-
+    else if(choiz=='s'){
+        hChoice= 'Scissors'
     }
 
     return hChoice
@@ -50,56 +47,56 @@ function humanChoice(){
 
 
 
-let playGame=(rounds)=>{
+let playGame=()=>{
+    var winner='';
     let compScore=0;
     let humanScore=0;
 
     function playRound(humanChoice,computerChoice){
-        var winner='';
+
     
         if (humanChoice== "Rock" && computerChoice=="Rock"  ){
-            winner='Tie';
+            winner='Tie, both recieve points!';
             compScore+=1;
             humanScore+=1;
     
-    
         } 
         if (humanChoice== "Rock" && computerChoice=="Paper"){
-            winner='Computer wins --> paper';
+            winner='Computer wins --> paper covers rock';
             compScore+=1;
     
         } 
         if (humanChoice== "Rock" && computerChoice=='Scissors'){
-            winner= 'You win --> Rock ';
+            winner= 'You win --> rock beats scissors ';
             humanScore+=1;
     
         } 
         if (humanChoice== "Paper" && computerChoice=="Paper"  ){
-            winner='Tie';
+            winner='Tie, both recieve points!';
             compScore+=1;
             humanScore+=1;
     
         } 
         if (humanChoice== "Paper" && computerChoice=="Rock"){
-            winner='You win --> paper';
+            winner='You win --> paper covers rock';
             humanScore+=1;
     
     
         } 
         if (humanChoice== "Paper" && computerChoice=='Scissors'){
-            winner= 'Computer wins --> Rock ';
+            winner= 'Computer wins --> scissors cuts paper ';
             compScore+=1;
     
         } 
         if (humanChoice== "Scissors" && computerChoice=="Scissors"  ){
-            winner='Tie';
+            winner='Tie, both recieve points!';
             compScore+=1;
             humanScore+=1;
     
     
         } 
         if (humanChoice== "Scissors" && computerChoice=="Paper"){
-            winner='You win --> paper';
+            winner='You win --> scissors cuts paper';
             humanScore+=1;
     
     
@@ -114,21 +111,103 @@ let playGame=(rounds)=>{
     
     }
 
-    for (let i=0; i<rounds; i++){
-        // human=;
-        // computer= func2;
-    
-        console.log(playRound(humanChoice(), computerChoice()));
-    }
+    playRound(humanChoice(), computerChoice());
+    // return [winner, compScore, humanScore]
+    document.getElementById("txt").innerHTML= winner;
+    document.getElementsByClassName("humanCounter").innerHTML= humanScore;
+    document.getElementsByClassName("computerCounter").innerHTML= compScore;
+
 }
 
 
+    
+
+
+
+    // for (let i=0; i<5; i++){
+    //     // human=;
+    //     // computer= func2;
+    
+    //     console.log(playRound(humanChoice(), computerChoice()));
+    // }
 
 
 
 
-playGame(5);
-//console.log(playRound(humanChoice(),computerChoice()))
-// humanChoice();
-// computerChoice();
 
+
+
+// code by richardCodes
+
+document.getElementById('rockBtn').addEventListener('click', function(){
+    document.querySelector('.outcomeSign').style.display='flex';
+});
+document.getElementById('paperBtn').addEventListener('click', function(){
+    document.querySelector('.outcomeSign').style.display='flex';
+});
+document.getElementById('scissorBtn').addEventListener('click', function(){
+    document.querySelector('.outcomeSign').style.display='flex';
+});
+
+
+document.getElementById('restartBtn').addEventListener("click", function(){
+    document.querySelector('.outcomeSign').style.display='none';
+    document.querySelector(".humanCounter").innerHTML = '0';
+    document.querySelector(".computerCounter").innerHTML = '0';
+    
+
+});
+
+
+
+
+
+
+
+
+
+playGame();
+
+
+
+
+
+
+/*
+
+if (document.getElementById('paperBtn').clicked){
+    console.log('paper me')
+    }
+    
+    let pBtn=document.getElementById('paperBtn');
+    let rBtn=document.getElementById('rockBtn')
+    let sBtn=document.getElementById('scissorBtn')
+////////////////////////
+
+console.log(playRound(humanChoice(),computerChoice()))
+humanChoice();
+computerChoice();
+
+////////////////////////////
+
+    // for (let i=0; i<rounds; i++){
+    //     // human=;
+    //     // computer= func2;
+    
+    //     console.log(playRound(humanChoice(), computerChoice()));
+    // }
+
+
+
+    //////////////////////////////////
+
+    const cliq= document.querySelector('#restartBtn');
+cliq.addEventListener("click", ()=>{
+    console.log("ive been clicked");
+});
+////////////////////////////////////////
+
+// add eventlistener to a button:, changes the css (style), specifically display w keyword dislpay
+// dont need to add .notation for getElembyID , just the name 
+
+*/
