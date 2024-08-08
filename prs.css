@@ -50,39 +50,21 @@ h2{
     border-color: rgb(21, 12, 2);
     border-style:dashed ;
     border-width: 5px;
-    top:30px;
+    top:20px;
     width: auto;
 
 
 }
-.textBox1{
-    /* display:contents; */
-    max-width: 100px;
-    max-height: fit-content;
-    /* white-space: normal; */
-    background-color: aqua;
 
-}
-.textBox2{
-    max-width: 10px;
-    max-height: fit-content;
-    /* display: flex;
-    position: relative;
-    right:90px;
-    width: 10px;
-    padding: 15px; */
-    /* white-space: initial; */
-
-}
 .outcomeSign{
     background-color: rgb(242, 191, 97,0.5);
     width: auto;
-    height: 150px;
-    display:block;
-    /* opacity: 0.5;
-    z-index: -10; */
-    /* visibility: hidden; */
+    height: 140px;
+    display:flex;
     display: none; 
+    font-size:25px;
+    justify-content: center;
+    padding-top: 5px;
 
 }
 #restartBtn{
