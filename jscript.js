@@ -1,3 +1,5 @@
+// odin project #1
+
 function computerChoice() {
   let cChoice = "";
 
@@ -16,31 +18,10 @@ function computerChoice() {
   return cChoice;
 }
 
-// let humanPick = () => {
-//   let humanChoice = "";
-//   let rckFunc = () => {
-//     // document.querySelector(".outcomeSign").style.display = "flex";
-//     humanChoice = "Rock";
-//     console.log("chosen:", humanChoice);
-//   };
-//   let pprFunc = () => {
-//     // document.querySelector(".outcomeSign").style.display = "flex";
-//     humanChoice = "Paper";
-//     // console.log('chosen:', humanChoice)
-//   };
-//   let scrsFunc = () => {
-//     // document.querySelector(".outcomeSign").style.display = "flex";
-//     humanChoice = "Scissors";
-//     console.log("chosen:", humanChoice);
-//   };
-
-//   return humanChoice;
-// };
 let winner = "";
 let compScore = 0;
 let humanScore = 0;
 let playRound = (humanChoice) => {
-
   let computerChoicez = computerChoice();
 
   // console.log(computerChoice());
@@ -48,36 +29,36 @@ let playRound = (humanChoice) => {
   // console.log(humanChoice == "Rock"); //--> true
   // console.log(computerChoicez == "Rock"); //--> true
 
-  if (humanChoice == "Rock" && computerChoicez == "Rock") {
+  if (humanChoice == "r" && computerChoicez == "Rock") {
     winner = "Tie, both recieve points!";
     compScore += 1;
     humanScore += 1;
     // console.log('yes')
-  } else if (humanChoice == "Rock" && computerChoicez == "Paper") {
-    winner = "Computer wins --> paper covers rock";
+  } else if (humanChoice == "r" && computerChoicez == "Paper") {
+    winner = "Computer wins --> Paper covers rock";
     compScore += 1;
-  } else if (humanChoice == "Rock" && computerChoicez == "Scissors") {
-    winner = "You win --> rock beats scissors ";
+  } else if (humanChoice == "r" && computerChoicez == "Scissors") {
+    winner = "You win --> Rock beats scissors ";
     humanScore += 1;
-  } else if (humanChoice == "Paper" && computerChoicez == "Paper") {
+  } else if (humanChoice == "p" && computerChoicez == "Paper") {
     winner = "Tie, both recieve points!";
     compScore += 1;
     humanScore += 1;
-  } else if (humanChoice == "Paper" && computerChoicez == "Rock") {
-    winner = "You win --> paper covers rock";
+  } else if (humanChoice == "p" && computerChoicez == "Rock") {
+    winner = "You win --> Paper covers rock";
     humanScore += 1;
-  } else if (humanChoice == "Paper" && computerChoicez == "Scissors") {
-    winner = "Computer wins --> scissors cuts paper ";
+  } else if (humanChoice == "p" && computerChoicez == "Scissors") {
+    winner = "Computer wins --> Scissors cuts paper ";
     compScore += 1;
-  } else if (humanChoice == "Scissors" && computerChoicez == "Scissors") {
+  } else if (humanChoice == "s" && computerChoicez == "Scissors") {
     winner = "Tie, both recieve points!";
     compScore += 1;
     humanScore += 1;
-  } else if (humanChoice == "Scissors" && computerChoicez == "Paper") {
-    winner = "You win --> scissors cuts paper";
+  } else if (humanChoice == "s" && computerChoicez == "Paper") {
+    winner = "You win --> Scissors cuts paper";
     humanScore += 1;
-  } else if (humanChoice == "Scissors" && computerChoicez == "Rock") {
-    winner = "Computer wins --> Rock ";
+  } else if (humanChoice == "s" && computerChoicez == "Rock") {
+    winner = "Computer wins --> Rock breaks Scissors ";
     compScore += 1;
   } else {
     winner = "error";
@@ -95,7 +76,6 @@ let restart = () => {
     document.querySelector(".outcomeSign").style.display = "none";
     document.querySelector(".humanCounter").innerHTML = humanScore;
     document.querySelector(".computerCounter").innerHTML = compScore;
-
   });
 };
 
@@ -106,25 +86,20 @@ const display = () => {
   document.querySelector(".computerCounter").innerHTML = compScore;
 };
 
-// playRound();
-// playRound(humanPick(), computerChoice());
-
-// humanPick();
-// playgame();
-
 restart();
 
 const rock = document.querySelector("#rockBtn");
 const paper = document.querySelector("#paperBtn");
 const scissors = document.querySelector("#scissorBtn");
 
+//help from --> https://stackoverflow.com/questions/70747536/how-to-check-if-a-button-is-clicked-inside-an-if-statement?answertab=createdasc#tab-top
+
 rock.addEventListener("click", function () {
-  playRound("Rock");
+  playRound("r");
 });
 paper.addEventListener("click", function () {
-  playRound("Paper");
+  playRound("p");
 });
 scissors.addEventListener("click", function () {
-  playRound("Scissors");
+  playRound("s");
 });
-
