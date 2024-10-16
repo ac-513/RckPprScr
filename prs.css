@@ -1,0 +1,97 @@
+
+body{
+    background-color: rgb(251, 239, 172);
+}
+
+#btns button img{ 
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    
+}
+#btns button{
+    background-color: rgb(212, 164, 67);
+    margin: 20px;
+    border-style: dashed;
+    cursor: pointer;
+    border-width: 3px;
+} 
+#btns{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    
+}
+#btns button:hover{
+background-color: rgb(240, 221, 113);
+}
+h1{
+
+    text-align: center;
+    color: rgb(138, 87, 5);
+}
+h2{
+
+    text-align: center;
+    color: rgb(138, 87, 5);
+    box-shadow: 0px 50px 30px 20px rgb(243, 217, 124) ;
+}
+
+.scoreDisplay{
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    background-color: rgb(248, 213, 74);
+    height:200px;
+    border-radius: 20px;
+    border-color: rgb(21, 12, 2);
+    border-style:dashed ;
+    border-width: 5px;
+    top:20px;
+    width: auto;
+
+
+}
+
+.outcomeSign{
+    background-color: rgb(242, 191, 97,0.5);
+    width: auto;
+    height: 140px;
+    display:flex;
+    display: none; 
+    color: rgb(154, 101, 3);
+    font-size:30px;
+    text-shadow: white 2px 4px 2px;
+    justify-content: center;
+    padding-top: 5px;
+
+}
+#restartBtn{
+
+    position: absolute;
+    height: 30px;
+    left: 47%;
+    bottom: 32%;
+    border-radius: 15px;
+    justify-content:center;
+    background-color: white;
+    border-style: dashed;
+    border-width: 3px;
+
+}
+#restartBtn:hover{
+    background-color: rgb(255, 240, 155);
+    cursor: pointer;
+    
+
+}
+.vLine{
+
+    border-right: solid;
+    border-style:dashed ;
+    border-width: 3px;
+    height: 200px;
+    position: relative;
+
+
+}
